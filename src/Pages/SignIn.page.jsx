@@ -27,7 +27,6 @@ const SignIn = (props) => {
    * Initializes the Sign-In client.
    */
   const initClient = function () {
-    debugger;
     if (gapi) {
       gapi.load("auth2", function () {
         /**
