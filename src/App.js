@@ -12,7 +12,7 @@ function App() {
   // return ;
   return (
     <div>
-      <TripsSearch frontendtype="tour" zoom={11} center={destination} />
+      {/* <TripsSearch frontendtype="tour" zoom={11} center={destination} /> */}
       <SignIn setUserId={setUserId} />
     </div>
   );
