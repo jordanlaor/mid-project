@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { GoogleLogin } from "react-google-login";
+
+const clientId = "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleusercontent.com";
 
 const SignIn = (props) => {
   const { setUserId } = props;
@@ -23,31 +26,16 @@ const SignIn = (props) => {
     console.log(error);
   };
 
-  /**
-   * Initializes the Sign-In client.
-   */
-  const initClient = function () {
-    if (gapi) {
-      gapi.load("auth2", function () {
-        /**
-         * Retrieve the singleton for the GoogleAuth library and set up the
-         * client.
-         */
-        auth2 = gapi.auth2.init({
-          client_id: "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleusercontent.com",
-        });
-
-        // Attach the click handler to the sign-in button
-        auth2.attachClickHandler("signin-button", {}, onSuccess, onFailure);
-      });
-    }
-  };
-
-  useEffect(initClient(), [gapi]);
-
   return (
     <div>
-      <div className="g-signin2" data-onsuccess="onSignIn"></div>
+      <GoogleLogin
+        clientId={clientId}
+        buttonText="Login"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy={"single_host_origin"}
+        isSignedIn={true}
+      />
     </div>
   );
 };
