@@ -35,7 +35,7 @@ const SignIn = (props) => {
          * client.
          */
         auth2 = gapi.auth2.init({
-          client_id: "984229081126-cec74rjft2tr7ocmo5eupnns84irgsb0.apps.googleusercontent.com",
+          client_id: "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleusercontent.com",
         });
 
         // Attach the click handler to the sign-in button
