@@ -15,7 +15,7 @@ const SignIn = (props) => {
    * Handle successful sign-ins.
    */
   const onSuccess = function (user) {
-    console.log("Signed in as " + user.getBasicProfile().getName());
+    console.log("Signed in as " + user.getBasicProfile().getId());
     setUserId(user.getBasicProfile().getId());
   };
 
