@@ -5,7 +5,6 @@ const clientId = "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleuserc
 
 const SignIn = (props) => {
   const { setUserId } = props;
-  let { gapi } = window;
   /**
    * The Sign-In client object.
    */
