@@ -6,10 +6,12 @@ import ChooseDestination from "../../Pages/ChooseDestination.page";
 import TripsSearch from "../../Pages/TripsSearch.page";
 import TripDetails from "../../Pages/TripDetails.page";
 import TripsCart from "../../Pages/TripsCart.page";
+import Nav from "../Nav/Nav.component";
 
 const Router = () => {
   return (
     <Router>
+      <Nav />
       <Switch>
         <Route exact path="/">
           <SignIn />

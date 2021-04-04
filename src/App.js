@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import TripsSearch from "./Pages/TripsSearch.page";
-import SignIn from "./Pages/SignIn.page";
+import Router from "./components/Router/Router.component";
 
 import "./App.css";
 
@@ -13,7 +12,8 @@ function App() {
   return (
     <div>
       {/* <TripsSearch frontendtype="tour" zoom={11} center={destination} /> */}
-      <SignIn setUserId={setUserId} />
+      {/* <SignIn setUserId={setUserId} /> */}
+      <Router />
     </div>
   );
 }
