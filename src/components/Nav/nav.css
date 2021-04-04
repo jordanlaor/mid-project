@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.navLinkItem {
+  list-style: none;
+  font-size: 2rem;
+  margin: auto;
+  cursor: pointer;
+}
+
+.navLink {
+  color: unset;
+  text-decoration: none;
+}

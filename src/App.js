@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 import Router from "./components/Router/Router.component";
+import AppContext from "./components/AppCotext/AppContext.component";
 
 import "./App.css";
 
 function App() {
+  const CLIENT_ID = "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleusercontent.com";
+
+  const routerProps = { frontendtype: "tour", zoom: 11, CLIENT_ID };
+
   let [destination, setDestination] = useState([10.292, 47.546]);
-  let [userId, setUserId] = useState(null);
-  // TODO: Change props to be dynamic, the center should be the chosen destination.
-  // return ;
+  let [user, setUser] = useState(null);
+  let context = { user, setUser, destination, setDestination };
+  console.log(context);
+
   return (
-    <div>
-      {/* <TripsSearch frontendtype="tour" zoom={11} center={destination} /> */}
-      {/* <SignIn setUserId={setUserId} /> */}
-      <Router />
-    </div>
+    <AppContext.Provider value={context}>
+      <Router routerProps={routerProps} />
+    </AppContext.Provider>
   );
 }
 

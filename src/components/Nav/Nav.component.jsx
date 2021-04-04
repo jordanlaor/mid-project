@@ -1,5 +1,5 @@
 import React from "react";
-import { useRouteMatch } from "react-router";
+import { Link, useRouteMatch } from "react-router-dom";
 
 import SignOut from "../SignOut/SignOut.component";
 
@@ -9,17 +9,23 @@ const Nav = () => {
   return (
     <>
       {useRouteMatch("/:anything") && (
-        <ul>
-          <li className="navLink">
-            <Link to="/choosedestination">Choose a Destination</Link>
+        <ul className="nav">
+          <li className="navLinkItem">
+            <Link className="navLink" to="/choosedestination">
+              Choose a Destination
+            </Link>
           </li>
-          <li className="navLink">
-            <Link to="/tripssearch">Search for Trips</Link>
+          <li className="navLinkItem">
+            <Link className="navLink" to="/tripssearch">
+              Search for Trips
+            </Link>
           </li>
-          <li className="navLink">
-            <Link to="/tripsCart">Go to the Trips Cart</Link>
+          <li className="navLinkItem">
+            <Link className="navLink" to="/tripsCart">
+              Go to the Trips Cart
+            </Link>
           </li>
-          <li className="navLink">
+          <li className="navLinkItem">
             <SignOut />
           </li>
         </ul>

@@ -1,20 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import SignIn from "../../Pages/SignIn.page";
+import Home from "../../Pages/Home.page";
 import ChooseDestination from "../../Pages/ChooseDestination.page";
 import TripsSearch from "../../Pages/TripsSearch.page";
 import TripDetails from "../../Pages/TripDetails.page";
 import TripsCart from "../../Pages/TripsCart.page";
 import Nav from "../Nav/Nav.component";
 
-const Router = () => {
+const Router = ({ routerProps }) => {
+  const { frontendtype, zoom, CLIENT_ID } = routerProps;
   return (
-    <Router>
+    <BrowserRouter>
       <Nav />
       <Switch>
         <Route exact path="/">
-          <SignIn />
+          <Home clientId={CLIENT_ID} />
         </Route>
         <Route exact path="/choosedestination">
           <ChooseDestination />
@@ -29,7 +30,7 @@ const Router = () => {
           <TripsCart />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 };
 

@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GoogleLogin } from "react-google-login";
 
-const clientId = "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleusercontent.com";
+import AppContext from "../AppCotext/AppContext.component";
+
+import "./signIn.css";
 
 const SignIn = (props) => {
-  const { setUserId } = props;
-  /**
-   * The Sign-In client object.
-   */
-  let auth2;
+  const { clientId } = props;
+  const appContext = useContext(AppContext);
 
   /**
    * Handle successful sign-ins.
    */
   const onSuccess = function (user) {
-    console.log("Signed in as " + user.getBasicProfile().getId());
-    setUserId(user.getBasicProfile().getId());
+    console.log("Signed in as " + user.getBasicProfile().getName());
+    const basicProfile = user.getBasicProfile();
+    appContext.setUser({ id: basicProfile.getId(), name: basicProfile.getName(), email: basicProfile.getEmail() });
   };
 
   /**

@@ -10,7 +10,7 @@ const TripsSearch = (props) => {
       actionOpenType: "page-load",
 
       openOOIUrl: function (data) {
-        return `FlexView.DetailPage.html?id=${data.id}`;
+        return `trip/${data.id}`;
       },
     };
 
