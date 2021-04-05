@@ -8,6 +8,7 @@ import TripDetails from "../../Pages/TripDetails.page";
 import TripsCart from "../../Pages/TripsCart.page";
 import Nav from "../Nav/Nav.component";
 import AppContext from "../AppCotext/AppContext.component";
+import SpecialRoute from "../SpecialRoute/SpecialRoute.component";
 
 const Router = ({ routerProps }) => {
   const appContext = useContext(AppContext);
@@ -17,19 +18,34 @@ const Router = ({ routerProps }) => {
       <Nav clientId={CLIENT_ID} />
       <Switch>
         <Route exact path="/">
-          {appContext.user ? <Redirect to="/choosedestination" /> : <Home clientId={CLIENT_ID} />}
+          <SpecialRoute condition={appContext.user}>
+            <Redirect to="/choosedestination" />
+            <Home clientId={CLIENT_ID} />
+          </SpecialRoute>
         </Route>
         <Route exact path="/choosedestination">
-          <ChooseDestination />
+          <SpecialRoute condition={appContext.user}>
+            <ChooseDestination />
+            <Redirect to="/" />
+          </SpecialRoute>
         </Route>
         <Route exact path="/tripssearch">
-          <TripsSearch />
+          <SpecialRoute condition={appContext.user}>
+            <TripsSearch />
+            <Redirect to="/" />
+          </SpecialRoute>
         </Route>
         <Route exact path="/trip/:id">
-          <TripDetails />
+          <SpecialRoute condition={appContext.user}>
+            <TripDetails />
+            <Redirect to="/" />
+          </SpecialRoute>
         </Route>
         <Route exact path="/tripsCart">
-          <TripsCart />
+          <SpecialRoute condition={appContext.user}>
+            <TripsCart />
+            <Redirect to="/" />
+          </SpecialRoute>
         </Route>
       </Switch>
     </BrowserRouter>

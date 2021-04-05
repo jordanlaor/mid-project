@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoogleLogout } from "react-google-login";
-import { Redirect } from "react-router";
+import { Redirect, useHistory } from "react-router";
 
 import AppContext from "../AppCotext/AppContext.component";
 
@@ -11,11 +11,13 @@ const clientId = "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleuserc
 const SignOut = (props) => {
   const { clientId } = props;
   const appContext = useContext(AppContext);
+  const history = useHistory();
 
   const onSuccess = function () {
     console.log("Signed out successfully");
-    appContext.setUserId(null);
-    <Redirect to="/"></Redirect>;
+    console.log(appContext);
+    appContext.setUser(null);
+    // history.replace("/");
   };
 
   return (
