@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import AppContext from "../components/AppContext/AppContext.component";
 
 const ChooseDestination = () => {
-  return <div>Choose Destination</div>;
+  const appContext = useContext(AppContext);
+  return (
+    <div>
+      <h2>hello {appContext.user.name}!</h2>
+      <Link to="/tripssearch">Search for trips</Link>
+    </div>
+  );
 };
 
 export default ChooseDestination;

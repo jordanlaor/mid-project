@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { GoogleLogout } from "react-google-login";
 import { Redirect, useHistory } from "react-router";
 
-import AppContext from "../AppCotext/AppContext.component";
+import AppContext from "../AppContext/AppContext.component";
 
 import "./signOut.css";
 
@@ -17,7 +17,6 @@ const SignOut = (props) => {
     console.log("Signed out successfully");
     console.log(appContext);
     appContext.setUser(null);
-    // history.replace("/");
   };
 
   return (

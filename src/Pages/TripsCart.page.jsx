@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import AppContext from "../components/AppCotext/AppContext.component";
+import AppContext from "../components/AppContext/AppContext.component";
 
 const TripsCart = (props) => {
   const appContext = useContext(AppContext);
