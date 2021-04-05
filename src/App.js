@@ -12,7 +12,7 @@ function App() {
 
   let [destination, setDestination] = useState([10.292, 47.546]);
   let [user, setUser] = useState(null);
-  let [tripsList, setTripsList] = useState(["11469653", "33150498"]);
+  let [tripsList, setTripsList] = useState([]);
   let context = { user, setUser, destination, setDestination, tripsList, setTripsList };
   console.log(context);
 

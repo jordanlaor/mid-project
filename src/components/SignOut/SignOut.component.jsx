@@ -6,8 +6,6 @@ import AppContext from "../AppContext/AppContext.component";
 
 import "./signOut.css";
 
-const clientId = "984229081126-j76b48rlbtn8bdrvu0pq5o5au5l469kd.apps.googleusercontent.com";
-
 const SignOut = (props) => {
   const { clientId } = props;
   const appContext = useContext(AppContext);

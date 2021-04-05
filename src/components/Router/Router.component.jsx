@@ -9,6 +9,7 @@ import TripsCart from "../../Pages/TripsCart.page";
 import Nav from "../Nav/Nav.component";
 import AppContext from "../AppContext/AppContext.component";
 import SpecialRoute from "../SpecialRoute/SpecialRoute.component";
+import SignIn from "../SignIn/SignIn.component";
 
 const Router = ({ routerProps }) => {
   const appContext = useContext(AppContext);
@@ -19,6 +20,7 @@ const Router = ({ routerProps }) => {
       <Switch>
         <Route exact path="/">
           <SpecialRoute condition={appContext.user}>
+            {/* window.gapi.auth2.getAuthInstance().isSignedIn.get() */}
             <Redirect to="/choosedestination" />
             <Home clientId={CLIENT_ID} />
           </SpecialRoute>
