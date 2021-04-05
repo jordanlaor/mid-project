@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoogleLogin } from "react-google-login";
 
-import AppContext from "../AppCotext/AppContext.component";
+import AppContext from "../AppContext/AppContext.component";
 
 import "./signIn.css";
 

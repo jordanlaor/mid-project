@@ -7,7 +7,7 @@ import TripsSearch from "../../Pages/TripsSearch.page";
 import TripDetails from "../../Pages/TripDetails.page";
 import TripsCart from "../../Pages/TripsCart.page";
 import Nav from "../Nav/Nav.component";
-import AppContext from "../AppCotext/AppContext.component";
+import AppContext from "../AppContext/AppContext.component";
 import SpecialRoute from "../SpecialRoute/SpecialRoute.component";
 
 const Router = ({ routerProps }) => {

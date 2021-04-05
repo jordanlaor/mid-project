@@ -5,6 +5,7 @@ import AppContext from "../components/AppContext/AppContext.component";
 
 const ChooseDestination = () => {
   const appContext = useContext(AppContext);
+  console.log(appContext);
   return (
     <div>
       <h2>hello {appContext.user.name}!</h2>

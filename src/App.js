@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 
 import Router from "./components/Router/Router.component";
-import AppContext from "./components/AppCotext/AppContext.component";
+import AppContext from "./components/AppContext/AppContext.component";
 
 import "./App.css";
 
