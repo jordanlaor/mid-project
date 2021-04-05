@@ -8,12 +8,12 @@ const TripsSearch = (props) => {
       zoom, // set initial zoom level
       center, // set initial map center
       actionOpenType: "page-load",
+      // whereHide: true,
 
       openOOIUrl: function (data) {
         return `trip/${data.id}`;
       },
     };
-
     const fvp = window.oa.api.flexviewpage(conf);
   }, []);
   return <div className="oax-top-cont tripsSearch"></div>;

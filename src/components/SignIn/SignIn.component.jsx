@@ -14,6 +14,7 @@ const SignIn = (props) => {
    */
   const onSuccess = function (user) {
     console.log("Signed in as " + user.getBasicProfile().getName());
+    console.log(user.getBasicProfile().getId());
     const basicProfile = user.getBasicProfile();
     appContext.setUser({ id: basicProfile.getId(), name: basicProfile.getName(), email: basicProfile.getEmail() });
   };

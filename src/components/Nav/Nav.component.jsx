@@ -1,32 +1,33 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 
 import SignOut from "../SignOut/SignOut.component";
 
 import "./nav.css";
 
-const Nav = () => {
+const Nav = (props) => {
+  const { clientId } = props;
   return (
     <>
       {useRouteMatch("/:anything") && (
         <ul className="nav">
           <li className="navLinkItem">
-            <Link className="navLink" to="/choosedestination">
+            <NavLink className="navLink" to="/choosedestination">
               Choose a Destination
-            </Link>
+            </NavLink>
           </li>
           <li className="navLinkItem">
-            <Link className="navLink" to="/tripssearch">
+            <NavLink className="navLink" to="/tripssearch">
               Search for Trips
-            </Link>
+            </NavLink>
           </li>
           <li className="navLinkItem">
-            <Link className="navLink" to="/tripsCart">
+            <NavLink className="navLink" to="/tripsCart">
               Go to the Trips Cart
-            </Link>
+            </NavLink>
           </li>
           <li className="navLinkItem">
-            <SignOut />
+            <SignOut clientId={clientId} />
           </li>
         </ul>
       )}
