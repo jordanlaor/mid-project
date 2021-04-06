@@ -20,7 +20,6 @@ const Router = ({ routerProps }) => {
       <Switch>
         <Route exact path="/signin">
           <SpecialRoute condition={appContext.user}>
-            {/* window.gapi.auth2.getAuthInstance().isSignedIn.get() */}
             <Redirect to="/" />
             <SignInPage clientId={CLIENT_ID} />
           </SpecialRoute>

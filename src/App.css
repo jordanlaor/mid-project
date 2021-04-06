@@ -46,3 +46,13 @@ h3 {
   padding: 1rem 2rem;
   background: white;
 }
+.oax-top-cont {
+  flex-grow: 1;
+}
+
+.oax .oax-map-container,
+.oax-part-flexviewpage,
+.oax-part-flexview,
+.oax-flexView-wrapper {
+  height: 100%;
+}

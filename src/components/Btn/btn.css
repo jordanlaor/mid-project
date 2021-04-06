@@ -3,9 +3,10 @@
   border-radius: 0.8rem;
   padding: 1rem;
   font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
   cursor: pointer;
-  background-color: #3d6e8b0e;
+  background-color: #3d6e8b11;
 }

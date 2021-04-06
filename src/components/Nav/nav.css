@@ -2,7 +2,8 @@
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  margin: 1rem 0;
+  padding: 1rem 0;
+  margin: 0;
 }
 
 .navLinkItem {
