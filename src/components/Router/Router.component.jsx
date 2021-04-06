@@ -10,6 +10,7 @@ import Nav from "../Nav/Nav.component";
 import AppContext from "../AppContext/AppContext.component";
 import SpecialRoute from "../SpecialRoute/SpecialRoute.component";
 import SignIn from "../SignIn/SignIn.component";
+import error404 from "../../Pages/error404.page";
 
 const Router = ({ routerProps }) => {
   const appContext = useContext(AppContext);
@@ -18,37 +19,38 @@ const Router = ({ routerProps }) => {
     <BrowserRouter>
       <Nav clientId={CLIENT_ID} />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/signin">
           <SpecialRoute condition={appContext.user}>
             {/* window.gapi.auth2.getAuthInstance().isSignedIn.get() */}
-            <Redirect to="/choosedestination" />
+            <Redirect to="/" />
             <Home clientId={CLIENT_ID} />
           </SpecialRoute>
         </Route>
-        <Route exact path="/choosedestination">
+        <Route exact path="/">
           <SpecialRoute condition={appContext.user}>
             <ChooseDestination />
-            <Redirect to="/" />
+            <Redirect to="/signin" />
           </SpecialRoute>
         </Route>
         <Route exact path="/tripssearch">
           <SpecialRoute condition={appContext.user}>
             <TripsSearch />
-            <Redirect to="/" />
+            <Redirect to="/signin" />
           </SpecialRoute>
         </Route>
         <Route exact path="/trip/:id">
           <SpecialRoute condition={appContext.user}>
             <TripDetails />
-            <Redirect to="/" />
+            <Redirect to="/signin" />
           </SpecialRoute>
         </Route>
         <Route exact path="/tripsCart">
           <SpecialRoute condition={appContext.user}>
             <TripsCart />
-            <Redirect to="/" />
+            <Redirect to="/signin" />
           </SpecialRoute>
         </Route>
+        <Route component={error404} />
       </Switch>
     </BrowserRouter>
   );

@@ -9,11 +9,11 @@ const Nav = (props) => {
   const { clientId } = props;
   return (
     <>
-      {useRouteMatch("/:anything") && (
+      {!useRouteMatch("/signin") && (
         <ul className="nav">
           <li className="navLinkItem">
-            <NavLink className="navLink" to="/choosedestination">
-              Choose a Destination
+            <NavLink className="navLink" to="/">
+              Home
             </NavLink>
           </li>
           <li className="navLinkItem">

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GoogleLogin } from "react-google-login";
+import axios from "axios";
 
 import AppContext from "../AppContext/AppContext.component";
 
@@ -16,7 +17,7 @@ const SignIn = (props) => {
     console.log("Signed in as " + user.getBasicProfile().getName());
     console.log(user.getBasicProfile().getId());
     const basicProfile = user.getBasicProfile();
-    appContext.setUser({ id: basicProfile.getId(), name: basicProfile.getName(), email: basicProfile.getEmail() });
+    appContext.setUser({ gid: basicProfile.getId(), name: basicProfile.getName(), email: basicProfile.getEmail() });
   };
 
   /**

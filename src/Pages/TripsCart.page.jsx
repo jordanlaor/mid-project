@@ -14,7 +14,6 @@ const TripsCart = (props) => {
       initDataPointList: appContext.tripsList,
       fitDataBounds: true,
       actionOpenType: "none",
-      modes: ["list"],
       onOoiClick: (object, event) => {
         console.log(object.id);
         history.push(`/trip/${object.id}`);

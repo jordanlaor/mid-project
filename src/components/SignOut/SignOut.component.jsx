@@ -17,6 +17,10 @@ const SignOut = (props) => {
     appContext.setUser(null);
   };
 
+  const onFailure = function (error) {
+    console.log(error);
+  };
+
   return (
     <>
       <GoogleLogout
@@ -28,6 +32,7 @@ const SignOut = (props) => {
         clientId={clientId}
         buttonText="Logout"
         onLogoutSuccess={onSuccess}
+        onFailure={onFailure}
         isSignedIn={true}
       />
     </>
