@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
+import SignInPage from "../../Pages/SignIn.page";
 import Home from "../../Pages/Home.page";
-import ChooseDestination from "../../Pages/ChooseDestination.page";
 import TripsSearch from "../../Pages/TripsSearch.page";
 import TripDetails from "../../Pages/TripDetails.page";
 import TripsCart from "../../Pages/TripsCart.page";
 import Nav from "../Nav/Nav.component";
 import AppContext from "../AppContext/AppContext.component";
 import SpecialRoute from "../SpecialRoute/SpecialRoute.component";
-import SignIn from "../SignIn/SignIn.component";
 import error404 from "../../Pages/error404.page";
 
 const Router = ({ routerProps }) => {
@@ -23,12 +22,12 @@ const Router = ({ routerProps }) => {
           <SpecialRoute condition={appContext.user}>
             {/* window.gapi.auth2.getAuthInstance().isSignedIn.get() */}
             <Redirect to="/" />
-            <Home clientId={CLIENT_ID} />
+            <SignInPage clientId={CLIENT_ID} />
           </SpecialRoute>
         </Route>
         <Route exact path="/">
           <SpecialRoute condition={appContext.user}>
-            <ChooseDestination />
+            <Home />
             <Redirect to="/signin" />
           </SpecialRoute>
         </Route>

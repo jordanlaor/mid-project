@@ -3,7 +3,11 @@ import "./btn.css";
 
 const Btn = (props) => {
   const { btnTxt, onClick } = props;
-  return <button onClick={onClick}>{btnTxt}</button>;
+  return (
+    <button className="btn" onClick={onClick}>
+      {btnTxt}
+    </button>
+  );
 };
 
 export default Btn;

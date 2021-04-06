@@ -1,5 +1,6 @@
 import React, { createElement, useContext, useEffect, useRef } from "react";
 import { useParams } from "react-router";
+import Rating from "react-rating";
 
 import AppContext from "../components/AppContext/AppContext.component";
 import Btn from "../components/Btn/Btn.component";
@@ -28,9 +29,11 @@ const TripDetails = (props) => {
     <div>
       <div className="controls">
         <Btn
-          btnTxt={appContext.tripsList.includes(id) ? "Remove from trips cart" : "Add to trips cart"}
+          btnTxt={
+            appContext.tripsList.includes(id) ? <span>Remove from trips cart &#128722;</span> : <span>Add to trips cart &#128722;</span>
+          }
           onClick={() => toggleTripInList(id)}
-        ></Btn>
+        />
       </div>
       <div ref={tripRef} className="oax-top-cont"></div>
     </div>

@@ -51,6 +51,8 @@ function App() {
 
   return (
     <AppContext.Provider value={context}>
+      <div className="image-bg"></div>
+
       <Router routerProps={routerProps} />
     </AppContext.Provider>
   );
