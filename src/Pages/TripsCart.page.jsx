@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from "react";
+import { useHistory } from "react-router";
 import AppContext from "../components/AppContext/AppContext.component";
 
 const TripsCart = (props) => {
   const appContext = useContext(AppContext);
   const { zoom, frontendtype } = props;
+  const history = useHistory();
   console.log(appContext.tripsList);
   useEffect(() => {
     const conf = {
@@ -11,6 +13,13 @@ const TripsCart = (props) => {
 
       initDataPointList: appContext.tripsList,
       fitDataBounds: true,
+      actionOpenType: "none",
+      modes: ["list"],
+      onOoiClick: (object, event) => {
+        console.log(object.id);
+        history.push(`/trip/${object.id}`);
+      },
+      withUrlHash: true,
     };
     const fvp = window.oa.api.flexviewpage(conf);
   }, []);

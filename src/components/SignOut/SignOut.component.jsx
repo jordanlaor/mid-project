@@ -28,6 +28,7 @@ const SignOut = (props) => {
         clientId={clientId}
         buttonText="Logout"
         onLogoutSuccess={onSuccess}
+        isSignedIn={true}
       />
     </>
   );

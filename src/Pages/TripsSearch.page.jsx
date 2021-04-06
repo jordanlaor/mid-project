@@ -1,38 +1,35 @@
 import React, { createElement, useContext, useEffect, useRef } from "react";
 
-import Btn from "../components/Btn/Btn.component";
-import AppContext from "../components/AppContext/AppContext.component";
-import { useLocation } from "react-router";
+import { useHistory } from "react-router";
 
 const TripsSearch = (props) => {
   const { frontendtype, zoom, center } = props;
   const tripsContainerRef = useRef(null);
-  const appContext = useContext(AppContext);
-  const location = useLocation();
-  let fvp;
 
-  const toggleTripInList = (id) => {
-    const index = appContext.tripsList.findIndex((trip) => trip === id);
-    if (index >= 0) appContext.setTripsList((tripsList) => tripsList.filter((trip) => trip !== id));
-    else appContext.setTripsList((tripsList) => [...tripsList, id]);
-  };
+  const history = useHistory();
+  let fvp;
 
   useEffect(() => {
     const conf = {
       frontendtype, // choose content type
       zoom, // set initial zoom level
       center, // set initial map center
-      actionOpenType: "page-load",
+      // actionOpenType: "page-load",
+      // actionOpenType: "in-page",
+      actionOpenType: "none",
+      onOoiClick: (object, event) => {
+        console.log(object.id);
+        history.push(`/trip/${object.id}`);
+      },
       withUrlHash: true,
       // whereHide: true,
 
-      openOOIUrl: function (data) {
-        return `trip/${data.id}`;
-      },
+      // openOOIUrl: function (data) {
+      //   return `trip/${data.id}`;
+      // },
     };
 
     fvp = window.oa.api.flexviewpage(conf);
-    console.log(fvp);
     // fvp.whenLoadedWithCategory(() => {
     //   console.log(tripsContainerRef.current);
     //   const tripsList = tripsContainerRef.current.querySelectorAll(".oax-id");
