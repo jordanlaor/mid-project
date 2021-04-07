@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import AppContext from "../components/AppContext/AppContext.component";
 
 const TripsSearch = (props) => {
-  const { frontendtype, zoom, center } = props;
   const tripsContainerRef = useRef(null);
   const appContext = useContext(AppContext);
   const history = useHistory();
@@ -12,10 +11,7 @@ const TripsSearch = (props) => {
 
   useEffect(() => {
     const conf = {
-      frontendtype, // choose content type
-      zoom, // set initial zoom level
-      center, // set initial map center
-
+      center: appContext.destination, // set initial map center
       actionOpenType: "none",
       onOoiClick: (object, event) => {
         console.log(object);
@@ -23,6 +19,8 @@ const TripsSearch = (props) => {
         destination.pop();
         appContext.setDestination(destination);
         appContext.setTripId(object.id);
+        debugger;
+        appContext.setTripName((object.primaryRegion && object.primaryRegion.title) || object.title);
         history.push(`/trip/${object.id}`);
       },
       withUrlHash: true,

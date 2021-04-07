@@ -13,7 +13,7 @@ import error404 from "../../Pages/error404.page";
 
 const Router = ({ routerProps }) => {
   const appContext = useContext(AppContext);
-  const { frontendtype, zoom, CLIENT_ID } = routerProps;
+  const { CLIENT_ID } = routerProps;
   return (
     <BrowserRouter>
       <Nav clientId={CLIENT_ID} />

@@ -48,6 +48,8 @@ h3 {
 }
 .oax-top-cont {
   flex-grow: 1;
+  padding: 0 20px;
+  background-color: #ffffff;
 }
 
 .oax .oax-map-container,

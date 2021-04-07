@@ -13,6 +13,7 @@ function App() {
 
   let [destination, setDestination] = useState([10.292, 47.546]);
   let [tripId, setTripId] = useState(null);
+  let [tripName, setTripName] = useState(null);
   let [user, setUser] = useState(null);
   let [tripsList, setTripsList] = useState([]);
   let [tripsRatingList, setTripsRatingList] = useState([]);
@@ -25,6 +26,8 @@ function App() {
     setDestination,
     tripId,
     setTripId,
+    tripName,
+    setTripName,
     tripsList,
     setTripsList,
     tripsRatingList,

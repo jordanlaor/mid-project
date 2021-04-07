@@ -80,6 +80,7 @@ const TripDetails = (props) => {
     } else {
       const { data } = await axios.post("https://606bf444f8678400172e6d03.mockapi.io/trips", {
         tripId: appContext.tripId,
+        tripTitle: appContext.tripName,
         point: appContext.destination,
         ratings: [{ gid: appContext.user.gid, rate: value }],
       });
@@ -92,7 +93,7 @@ const TripDetails = (props) => {
   return (
     <div>
       <div className="controls">
-        <Rating initialRating={rate} onChange={updateRating} />
+        <Rating emptySymbol={<span>&star;</span>} fullSymbol={<span>&starf;</span>} initialRating={rate} onChange={updateRating} />
         <Btn
           btnTxt={
             appContext.tripsList.find((trip) => trip.tripId === id) ? (
