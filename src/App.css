@@ -45,6 +45,9 @@ h3 {
 .controls {
   padding: 1rem 2rem;
   background: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 .oax-top-cont {
   flex-grow: 1;
@@ -57,4 +60,8 @@ h3 {
 .oax-part-flexview,
 .oax-flexView-wrapper {
   height: 100%;
+}
+
+.biggerTxt {
+  font-size: 3rem;
 }
