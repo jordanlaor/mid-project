@@ -93,7 +93,7 @@ const TripDetails = (props) => {
   return (
     <div>
       <div className="controls">
-        <Rating emptySymbol={<span>&star;</span>} fullSymbol={<span>&starf;</span>} initialRating={rate} onChange={updateRating} />
+        <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={rate} onChange={updateRating} />
         <Btn
           btnTxt={
             appContext.tripsList.find((trip) => trip.tripId === id) ? (

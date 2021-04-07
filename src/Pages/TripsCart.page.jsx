@@ -19,6 +19,7 @@ const TripsCart = (props) => {
         destination.pop();
         appContext.setDestination(destination);
         appContext.setTripId(object.id);
+        appContext.setTripName(object.primaryRegion ? object.primaryRegion.title : object.title);
         history.push(`/trip/${object.id}`);
       },
       withUrlHash: true,

@@ -20,7 +20,7 @@ const TripsSearch = (props) => {
         appContext.setDestination(destination);
         appContext.setTripId(object.id);
         debugger;
-        appContext.setTripName((object.primaryRegion && object.primaryRegion.title) || object.title);
+        appContext.setTripName(object.primaryRegion ? object.primaryRegion.title : object.title);
         history.push(`/trip/${object.id}`);
       },
       withUrlHash: true,
