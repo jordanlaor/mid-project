@@ -19,7 +19,6 @@ const TripsSearch = (props) => {
         destination.pop();
         appContext.setDestination(destination);
         appContext.setTripId(object.id);
-        debugger;
         appContext.setTripName(object.primaryRegion ? object.primaryRegion.title : object.title);
         history.push(`/trip/${object.id}`);
       },
