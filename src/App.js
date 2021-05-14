@@ -37,7 +37,6 @@ function App() {
     apiId,
     setApiId,
   };
-  console.log(context);
 
   useEffect(() => {
     const handleUserChange = async () => {

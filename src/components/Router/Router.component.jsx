@@ -24,6 +24,9 @@ const Router = ({ routerProps }) => {
             <SignInPage clientId={CLIENT_ID} />
           </SpecialRoute>
         </Route>
+        {/* <Route exact path="/signin">
+          {condition ? <Redirect to="/" /> : <SignInPage clientId={CLIENT_ID} />}
+        </Route> */}
         <Route exact path="/">
           <SpecialRoute condition={appContext.user}>
             <Home />
